@@ -41,26 +41,11 @@ function applyConditions() {
   });
 }
 
-function money(value) {
-  const n = Number(value);
-  if (!Number.isFinite(n)) return null;
-  return new Intl.NumberFormat("fr-FR").format(n);
-}
-
-function updateMarges() {
-  document.querySelectorAll("[data-marge]").forEach((node) => {
-    const [achatName, venteName] = node.dataset.marge.split(":");
-    const achat = Number(form.elements[achatName].value);
-    const vente = Number(form.elements[venteName].value);
-    if (!Number.isFinite(achat) || !Number.isFinite(vente) || form.elements[achatName].value === "" || form.elements[venteName].value === "") {
-      node.textContent = t("Marge : —");
-      return;
-    }
-    const delta = vente - achat;
-    const pct = achat > 0 ? ` (${Math.round((delta / achat) * 100)} %)` : "";
-    const amount = `${money(delta)} ${currentLang() === "ar" ? "درهم" : "MAD"}`;
-    node.textContent = currentLang() === "ar" ? `الهامش: ${amount}${pct}` : `Marge : ${amount}${pct}`;
-  });
+function decideurBlock() {
+  const choice = document.querySelector('[name="decideur"]:checked')?.value;
+  if (!choice) return t("Indiquez si cette personne décide des achats.");
+  if (choice === "Non") return t("Cette personne ne décide pas des achats. Demandez à parler au décideur, sinon arrêtez.");
+  return "";
 }
 
 function conditionallyHidden(el) {
@@ -148,14 +133,6 @@ function collect() {
     const value = el.value.trim();
     if (value) answers[el.name] = value;
   });
-  if (answers.test_montant_maybe && !answers.test_montant) {
-    answers.test_montant = answers.test_montant_maybe;
-  }
-  delete answers.test_montant_maybe;
-  if (answers.demande_pourquoi_baisse && !answers.demande_pourquoi) {
-    answers.demande_pourquoi = answers.demande_pourquoi_baisse;
-  }
-  delete answers.demande_pourquoi_baisse;
   return answers;
 }
 
@@ -170,11 +147,11 @@ function paintThanks() {
 async function submit() {
   showError("");
   const answers = collect();
-  if (!answers.rue) {
+  if (decideurBlock()) {
     onReview = false;
     step = 0;
     render();
-    showError(t("Indiquez la rue ou un repère du magasin."));
+    showError(decideurBlock());
     return;
   }
   nextBtn.disabled = true;
@@ -220,10 +197,12 @@ nextBtn.addEventListener("click", () => {
     submit();
     return;
   }
-  if (step === 0 && !form.elements.rue.value.trim()) {
-    showError(t("Indiquez la rue ou un repère du magasin."));
-    form.elements.rue.focus();
-    return;
+  if (step === 0) {
+    const reason = decideurBlock();
+    if (reason) {
+      showError(reason);
+      return;
+    }
   }
   if (step < panels.length - 1) step += 1;
   else onReview = true;
@@ -231,17 +210,11 @@ nextBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-form.addEventListener("change", () => {
-  applyConditions();
-  updateMarges();
-});
-form.addEventListener("input", updateMarges);
+form.addEventListener("change", applyConditions);
 document.addEventListener("langchange", () => {
-  updateMarges();
   render();
   if (!thanks.hidden) paintThanks();
 });
 
 applyConditions();
-updateMarges();
 render();

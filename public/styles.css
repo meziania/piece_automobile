@@ -200,6 +200,7 @@ html[dir="rtl"] .kicker {
 
 html[dir="rtl"] h1,
 html[dir="rtl"] h2,
+html[dir="rtl"] h3,
 html[dir="rtl"] .hint,
 html[dir="rtl"] .lede,
 html[dir="rtl"] .brand-name,
@@ -281,7 +282,8 @@ h1 {
 
 .panel h2,
 .review h2,
-.thanks h2 {
+.thanks h2,
+.stack h3 {
   margin: 0 0 6px;
   font-family: var(--display);
   font-size: 2rem;
@@ -289,6 +291,11 @@ h1 {
   letter-spacing: 0.04em;
   line-height: 0.95;
   text-transform: uppercase;
+}
+
+.stack h3 {
+  margin-top: 8px;
+  font-size: 1.35rem;
 }
 
 .hint {

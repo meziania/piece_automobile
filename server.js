@@ -126,21 +126,23 @@ function createdAtLabel() {
 }
 
 function mailSummary(record) {
-  const shop = oneLine(record.answers.nom || record.answers.rue || "Magasin");
-  const piece = oneLine(record.answers.p1_nom);
-  const achat = oneLine(record.answers.p1_achat);
-  const vente = oneLine(record.answers.p1_vente);
+  const answers = record.answers;
+  const shop = oneLine(answers.nom_magasin || answers.contact_nom || "Magasin");
+  const budget = oneLine(answers.budget);
+  const essayer = oneLine(answers.essayer);
+  const affaire = oneLine(answers.prix_affaire);
+  const max = oneLine(answers.prix_max);
   return {
     shop,
-    subject: `[Salmiya 2] Réponse — ${shop}`,
+    subject: `[Lafiray Salmia 2] Réponse — ${shop}`,
     text: [
-      "Nouvelle réponse au questionnaire pièces auto, Salmiya 2.",
+      "Nouvelle réponse au questionnaire pièces auto, Lafiray Salmia 2.",
       "",
       `Magasin : ${shop}`,
-      `Repère : ${oneLine(record.answers.rue)}`,
-      piece ? `Pièce 1 : ${piece}` : "",
-      achat ? `Achat : ${achat} MAD` : "",
-      vente ? `Vente : ${vente} MAD` : "",
+      budget ? `Budget d'achat mensuel : ${budget}` : "",
+      essayer ? `Prêt à essayer : ${essayer}` : "",
+      affaire ? `Bonne affaire : ${affaire} DH` : "",
+      max ? `Maximum accepté : ${max} DH` : "",
       "",
       "Le PDF complet est en pièce jointe.",
       `Référence : ${record.id}`,
@@ -302,8 +304,8 @@ app.post("/api/reponse", async (req, res) => {
     }
 
     const answers = cleanAnswers(req.body.answers);
-    if (!answers.rue) {
-      res.status(400).json({ ok: false, error: "Indiquez la rue ou un repère du magasin." });
+    if (answers.decideur !== "Oui") {
+      res.status(400).json({ ok: false, error: "Seul le décideur des achats peut répondre." });
       return;
     }
 
@@ -332,8 +334,8 @@ app.post("/api/reponse", async (req, res) => {
       id: record.id,
       token: record.token,
       createdAt: record.createdAt,
-      nom: oneLine(answers.nom, 120),
-      rue: oneLine(answers.rue, 160),
+      nom: oneLine(answers.nom_magasin || answers.contact_nom, 120),
+      rue: "Lafiray Salmia 2",
       emailed: record.emailed,
     });
     writeIndex(rows);
