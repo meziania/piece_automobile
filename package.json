@@ -1,0 +1,15 @@
+{
+  "name": "questionnaire-pieces-auto",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Questionnaire d'étude de marché pièces auto, Salmiya 2, Casablanca",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.17.2"
+  }
+}
