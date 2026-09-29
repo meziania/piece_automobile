@@ -41,9 +41,8 @@
         </div>
       </div>
       <div class="mast-copy">
-        <p class="kicker">Lafiray Salmia 2 · Casablanca</p>
-        <h1>Pièces auto, Lafiray Salmia 2.</h1>
-        <p class="lede">Bonjour, je réalise une étude sur les magasins de pièces auto de la zone. Cela prend 5 à 7 minutes et vos réponses restent confidentielles.</p>
+        <h1>Pièces auto.</h1>
+        <p class="lede">Bonjour, je réalise une étude sur les magasins de pièces auto de la zone. Cela prend 7 à 10 minutes et vos réponses restent confidentielles.</p>
         <ul class="part-pills">
           <li>Freinage</li>
           <li>Filtres</li>
@@ -56,7 +55,7 @@
 
     <div class="progress" id="progress">
       <div class="track" aria-hidden="true"><span id="bar"></span></div>
-      <div class="step-label" id="stepLabel">Étape 1 sur 6</div>
+      <div class="step-label" id="stepLabel">Étape 1 sur 7</div>
     </div>
 
     <form id="form" class="card" novalidate>
@@ -158,7 +157,150 @@
         </div>
       </section>
 
-      <section class="panel" data-step="3" data-title="Intérêt" hidden>
+      <section class="panel" data-step="3" data-title="Secteur" hidden>
+        <h2>Le secteur</h2>
+        <p class="hint">Plusieurs réponses possibles pour les familles, l’origine et les marques.</p>
+        <div class="stack">
+          <div class="field" data-label="Familles de pièces">
+            <span class="label">Quelles familles de pièces tournent le plus ?</span>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="familles" value="Freinage"><span>Freinage</span></label>
+              <label class="choice"><input type="checkbox" name="familles" value="Filtres"><span>Filtres</span></label>
+              <label class="choice"><input type="checkbox" name="familles" value="Moteur"><span>Moteur</span></label>
+              <label class="choice"><input type="checkbox" name="familles" value="Carrosserie"><span>Carrosserie</span></label>
+              <label class="choice"><input type="checkbox" name="familles" value="Électricité"><span>Électricité</span></label>
+              <label class="choice"><input type="checkbox" name="familles" value="Autre"><span>Autre</span></label>
+            </div>
+          </div>
+          <label class="field" data-label="Familles, précision" data-show-if="familles:Autre">
+            <span class="label">Précisez</span>
+            <input type="text" name="familles_autre">
+          </label>
+          <div class="field" data-label="Origine acceptée">
+            <span class="label">Quelle origine acceptez-vous ?</span>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="origine" value="Chine"><span>Chine</span></label>
+              <label class="choice"><input type="checkbox" name="origine" value="Turquie"><span>Turquie</span></label>
+              <label class="choice"><input type="checkbox" name="origine" value="Europe"><span>Europe</span></label>
+              <label class="choice"><input type="checkbox" name="origine" value="Marque connue"><span>Marque connue</span></label>
+              <label class="choice"><input type="checkbox" name="origine" value="Peu importe"><span>Peu importe</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Marques de voitures">
+            <span class="label">Quelles marques de voitures sont les plus demandées ?</span>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="marques" value="Dacia"><span>Dacia</span></label>
+              <label class="choice"><input type="checkbox" name="marques" value="Renault"><span>Renault</span></label>
+              <label class="choice"><input type="checkbox" name="marques" value="Peugeot"><span>Peugeot</span></label>
+              <label class="choice"><input type="checkbox" name="marques" value="Volkswagen"><span>Volkswagen</span></label>
+              <label class="choice"><input type="checkbox" name="marques" value="Hyundai / Kia"><span>Hyundai / Kia</span></label>
+              <label class="choice"><input type="checkbox" name="marques" value="Autre"><span>Autre</span></label>
+            </div>
+          </div>
+          <label class="field" data-label="Marques, précision" data-show-if="marques:Autre">
+            <span class="label">Précisez</span>
+            <input type="text" name="marques_autre">
+          </label>
+          <div class="field" data-label="Nombre de fournisseurs">
+            <span class="label">Avec combien de fournisseurs travaillez-vous ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="nb_fournisseurs" value="1"><span>1</span></label>
+              <label class="choice"><input type="radio" name="nb_fournisseurs" value="2 à 3"><span>2 à 3</span></label>
+              <label class="choice"><input type="radio" name="nb_fournisseurs" value="4 et plus"><span>4 et plus</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Ancienneté du fournisseur principal">
+            <span class="label">Depuis combien de temps travaillez-vous avec votre fournisseur principal ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="anciennete_fournisseur" value="Moins de 1 an"><span>Moins de 1 an</span></label>
+              <label class="choice"><input type="radio" name="anciennete_fournisseur" value="1 à 3 ans"><span>1 à 3 ans</span></label>
+              <label class="choice"><input type="radio" name="anciennete_fournisseur" value="Plus de 3 ans"><span>Plus de 3 ans</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Rythme d'achat">
+            <span class="label">À quel rythme achetez-vous ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="rythme" value="Chaque jour"><span>Chaque jour</span></label>
+              <label class="choice"><input type="radio" name="rythme" value="Chaque semaine"><span>Chaque semaine</span></label>
+              <label class="choice"><input type="radio" name="rythme" value="Quand un client commande"><span>Quand un client commande</span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" data-step="4" data-title="Gestion du client" hidden>
+        <h2>Gestion du client</h2>
+        <div class="stack">
+          <div class="field" data-label="Canal de commande">
+            <span class="label">Comment commandez-vous aujourd'hui ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="commande_canal" value="WhatsApp"><span>WhatsApp</span></label>
+              <label class="choice"><input type="radio" name="commande_canal" value="Téléphone"><span>Téléphone</span></label>
+              <label class="choice"><input type="radio" name="commande_canal" value="Déplacement chez le grossiste"><span>Déplacement chez le grossiste</span></label>
+              <label class="choice"><input type="radio" name="commande_canal" value="Représentant qui passe"><span>Représentant qui passe</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Délai de paiement actuel">
+            <span class="label">Quel délai de paiement avez-vous aujourd'hui ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="delai_paiement" value="Comptant"><span>Comptant</span></label>
+              <label class="choice"><input type="radio" name="delai_paiement" value="7 jours"><span>7 jours</span></label>
+              <label class="choice"><input type="radio" name="delai_paiement" value="15 jours"><span>15 jours</span></label>
+              <label class="choice"><input type="radio" name="delai_paiement" value="30 jours"><span>30 jours</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Plafond de crédit">
+            <span class="label">Jusqu'à quel montant de crédit travaillez-vous ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="plafond_credit" value="Pas de crédit"><span>Pas de crédit</span></label>
+              <label class="choice"><input type="radio" name="plafond_credit" value="Moins de 5 000 DH"><span>Moins de 5 000 DH</span></label>
+              <label class="choice"><input type="radio" name="plafond_credit" value="5 000 à 20 000 DH"><span>5 000 à 20 000 DH</span></label>
+              <label class="choice"><input type="radio" name="plafond_credit" value="Plus de 20 000 DH"><span>Plus de 20 000 DH</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Taille d'une commande">
+            <span class="label">Quelle est la taille d'une commande habituelle ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="taille_commande" value="Moins de 2 000 DH"><span>Moins de 2 000 DH</span></label>
+              <label class="choice"><input type="radio" name="taille_commande" value="2 000 à 8 000 DH"><span>2 000 à 8 000 DH</span></label>
+              <label class="choice"><input type="radio" name="taille_commande" value="Plus de 8 000 DH"><span>Plus de 8 000 DH</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Autre influence">
+            <span class="label">Qui d'autre influence l'achat, à part vous ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="influence" value="Personne"><span>Personne</span></label>
+              <label class="choice"><input type="radio" name="influence" value="Un vendeur du magasin"><span>Un vendeur du magasin</span></label>
+              <label class="choice"><input type="radio" name="influence" value="Un associé"><span>Un associé</span></label>
+              <label class="choice"><input type="radio" name="influence" value="Un garage client"><span>Un garage client</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Meilleur moment">
+            <span class="label">Quel est le meilleur moment pour passer au magasin ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="moment" value="Matin"><span>Matin</span></label>
+              <label class="choice"><input type="radio" name="moment" value="Après-midi"><span>Après-midi</span></label>
+              <label class="choice"><input type="radio" name="moment" value="Fin de journée"><span>Fin de journée</span></label>
+            </div>
+          </div>
+          <div class="field" data-label="Pour rester client">
+            <span class="label">Qu'est-ce qui vous ferait rester après un premier essai ?</span>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="fideliser" value="Le même prix à chaque commande"><span>Le même prix à chaque commande</span></label>
+              <label class="choice"><input type="radio" name="fideliser" value="La pièce disponible tout de suite"><span>La pièce disponible tout de suite</span></label>
+              <label class="choice"><input type="radio" name="fideliser" value="Un crédit respecté"><span>Un crédit respecté</span></label>
+              <label class="choice"><input type="radio" name="fideliser" value="Un interlocuteur fixe"><span>Un interlocuteur fixe</span></label>
+              <label class="choice"><input type="radio" name="fideliser" value="Autre"><span>Autre</span></label>
+            </div>
+          </div>
+          <label class="field" data-label="Pour rester, précision" data-show-if="fideliser:Autre">
+            <span class="label">Précisez</span>
+            <input type="text" name="fideliser_autre">
+          </label>
+        </div>
+      </section>
+
+      <section class="panel" data-step="5" data-title="Intérêt" hidden>
         <h2>Intérêt pour cette offre</h2>
         <p class="hint">Décrivez clairement l’offre avant ces questions. N’annoncez pas votre prix.</p>
         <div class="stack">
@@ -185,7 +327,7 @@
         </div>
       </section>
 
-      <section class="panel" data-step="4" data-title="Prix" hidden>
+      <section class="panel" data-step="6" data-title="Prix" hidden>
         <h2>Prix</h2>
         <p class="hint">Posez ces questions dans cet ordre, sans annoncer votre prix.</p>
         <div class="stack">
@@ -221,7 +363,7 @@
         </div>
       </section>
 
-      <section class="panel" data-step="5" data-title="Décision" hidden>
+      <section class="panel" data-step="7" data-title="Décision" hidden>
         <h2>Décision</h2>
         <div class="stack">
           <div class="field" data-label="Raison de changer">
