@@ -9,7 +9,10 @@ const nodemailer = require("nodemailer");
 const { buildPdf } = require("./lib/pdf");
 
 const ROOT = __dirname;
-const DATA_DIR = path.join(ROOT, "data", "reponses");
+const ON_VERCEL = Boolean(process.env.VERCEL);
+const DATA_DIR = ON_VERCEL
+  ? path.join("/tmp", "questionnaire-reponses")
+  : path.join(ROOT, "data", "reponses");
 const INDEX_PATH = path.join(DATA_DIR, "index.json");
 const PORT = Number(process.env.PORT || 3000);
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
@@ -351,15 +354,19 @@ app.post("/api/reponse", async (req, res) => {
   }
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  const ips = Object.values(os.networkInterfaces())
-    .flat()
-    .filter((item) => item && item.family === "IPv4" && !item.internal)
-    .map((item) => `http://${item.address}:${PORT}`);
-  console.log(`Questionnaire: http://localhost:${PORT}`);
-  if (ips.length) console.log(`Téléphone (même Wi-Fi): ${ips.join("  ")}`);
-  if (mailConfigured()) console.log(`Email PDF → ${process.env.MAIL_TO}`);
-  else if (process.env.MAIL_TO) console.log(`Email prévu → ${process.env.MAIL_TO} (SMTP_PASS manquant)`);
-  else console.log("Email non configuré: remplissez MAIL_TO dans .env");
-  console.log(ADMIN_PASSWORD ? "Archive PDF: /admin" : "ADMIN_PASSWORD manquant dans .env");
-});
+module.exports = app;
+
+if (!ON_VERCEL) {
+  app.listen(PORT, "0.0.0.0", () => {
+    const ips = Object.values(os.networkInterfaces())
+      .flat()
+      .filter((item) => item && item.family === "IPv4" && !item.internal)
+      .map((item) => `http://${item.address}:${PORT}`);
+    console.log(`Questionnaire: http://localhost:${PORT}`);
+    if (ips.length) console.log(`Téléphone (même Wi-Fi): ${ips.join("  ")}`);
+    if (mailConfigured()) console.log(`Email PDF → ${process.env.MAIL_TO}`);
+    else if (process.env.MAIL_TO) console.log(`Email prévu → ${process.env.MAIL_TO} (SMTP_PASS manquant)`);
+    else console.log("Email non configuré: remplissez MAIL_TO dans .env");
+    console.log(ADMIN_PASSWORD ? "Archive PDF: /admin" : "ADMIN_PASSWORD manquant dans .env");
+  });
+}
