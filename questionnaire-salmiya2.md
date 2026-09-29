@@ -1,131 +1,64 @@
-# Questionnaire — Magasins de pièces automobiles
-## Lafiray Salmia 2, Casablanca
+# Questionnaire — Gestion des clients, pièces auto
 
-**Durée :** 7 à 10 minutes. À poser oralement, en darija.  
-**Saisie :** les mêmes réponses se notent sur le site (français ou arabe).
+**Durée :** 5 à 7 minutes. À poser oralement, en darija.  
+**Sujet :** le système de gestion dont le magasin a besoin, le risque s'il ne change rien, et le prix mensuel.
 
 **Introduction**
 
-> Salam. Kan dir étude 3la les magasins dial pièces auto f Lafiray Salmia 2. Ghir 7 à 10 dqaeq, o jawb dyalkom ybqa sirri.
+> Salam. Kan dir étude 3la kifach les magasins dial pièces auto kayseyro les clients dyalhom. Ghir 5 dqaeq, o jawb dyalkom ybqa sirri.
 
-Tant que le nom de l’offre n’est pas fixé, dis **« had l’offre »**. N’annonce pas ton prix avant les questions de prix.
+Ma tqolch blli l'magasin dyalo f danger. Khlli hwa yqol chno kaydi3.
 
 ---
 
 ## A. Filtre
 
-Wach nta li katqarer les achats o les fournisseurs f had l’magasin ?
+Wach nta li katqarer les achats o les fournisseurs ?  
+Oui → kmel. Non → tleb li kayqarer, sinon wqef.
 
-- Oui → kmel
-- Non → tleb tehder m3a li kayqarer. Ila ma kaynach, wqef.
+## B. Qui le système doit suivre
 
-## B. Profil du magasin
+Katbi3o l : Particuliers / Garages / Les deux
 
-Chno katbi3o bzzaf ?  
-Pièces neuves / Pièces d'occasion / Les deux
+Chhal men clients katseyro f chher ?  
+Moins de 30 / 30 à 80 / 80 à 200 / Plus de 200
 
-Katbi3o bzzaf l :  
-Particuliers / Garages / Les deux
+Chhal men personnes ghadi ysta3mlo le système ?  
+Juste moi / 2 à 3 / Plus de 3
 
-Chhal hadi o l’magasin mhloul ?  
-Moins de 1 an / 1 à 3 ans / 4 à 10 ans / Plus de 10 ans
+## C. Aujourd'hui
 
-Chhal men personnes khdamin f l’magasin ?  
-1 / 2 à 3 / 4 et plus
+Kifach katseyro les clients daba ?  
+Cahier papier / WhatsApp / Excel / De mémoire / Un logiciel
 
-## C. Situation actuelle
+Chno li kaydi3 lik bzzaf ?  
+Un crédit non payé / Un client qui ne revient pas / Une pièce qu'on croyait en stock / Une facture introuvable
 
-Fin katshriw les pièces ?  
-Grossiste à Casablanca / Importation directe / Représentant qui passe au magasin / Autre
+Ila ma tbeddel walo f 6 chhor, chno li kaytzaad ?  
+Les impayés augmentent / On perd des clients / On perd du temps / Rien, ça va
 
-Chno akbar mochkil m3a les fournisseurs dyalkom daba ?  
-Prix / Ruptures de stock / Qualité / Délai de livraison / Paiement à crédit / Contrefaçons / Autre
+## D. Le système
 
-Chhal budget d’achat dyalkom f chher, taqriban ?  
-Moins de 15 000 DH / 15 000 à 40 000 DH / 40 000 à 100 000 DH / Plus de 100 000 DH
+Chno khassek f le système ? (plusieurs)  
+Historique de chaque client / Crédit et reste à payer / Stock des pièces / Factures / Rappel WhatsApp / Voir ce qui se vend / Autre
 
-## D. Le secteur
+## E. Développement
 
-Chno les familles li kaydour bzzaf ? (plusieurs)  
-Freinage / Filtres / Moteur / Carrosserie / Électricité / Autre
+B had suivi, chno li ghadi ykber lowel ?  
+Les clients reviennent / Les impayés baissent / La vente est plus rapide / Un employé gère sans moi
 
-Chno l’origine li katqbel ? (plusieurs)  
-Chine / Turquie / Europe / Marque connue / Peu importe
-
-Chno les marques dial tomobile li matloubin bzzaf ? (plusieurs)  
-Dacia / Renault / Peugeot / Volkswagen / Hyundai / Kia / Autre
-
-M3a chhal men fournisseurs khdam ?  
-1 / 2 à 3 / 4 et plus
-
-Chhal hadi o nta m3a le fournisseur principal ?  
-Moins de 1 an / 1 à 3 ans / Plus de 3 ans
-
-Fouqach katshri ?  
-Chaque jour / Chaque semaine / Quand un client commande
-
-## E. Gestion du client
-
-Kifach katcommandi daba ?  
-WhatsApp / Téléphone / Déplacement chez le grossiste / Représentant qui passe
-
-Chhal dial délai de paiement 3andek daba ?  
-Comptant / 7 jours / 15 jours / 30 jours
-
-Hta chhal dial crédit ?  
-Pas de crédit / Moins de 5 000 DH / 5 000 à 20 000 DH / Plus de 20 000 DH
-
-Chhal katkoune commande 3adiya ?  
-Moins de 2 000 DH / 2 000 à 8 000 DH / Plus de 8 000 DH
-
-Chkoun akhor kayeffet 3la l’achat, men ghir nta ?  
-Personne / Un vendeur du magasin / Un associé / Un garage client
-
-Fouqach ahsan waqt bach ndoz l magasin ?  
-Matin / Après-midi / Fin de journée
-
-Chno li ykhallik tebqa men b3d awel essai ?  
-Le même prix à chaque commande / La pièce disponible tout de suite / Un crédit respecté / Un interlocuteur fixe / Autre
-
-## F. Intérêt pour l’offre
-
-Wach 3andkom had l’haja daba ?  
-Oui / Non / J'y pense
-
-Kifach katjawbo 3la had l’haja daba ?
-
-Wach msta3ed tjerreb had l’offre ?  
+Wach msta3ed tjerreb had le système ?  
 Très probablement / Peut-être / Non
 
-## G. Prix (Van Westendorp)
+## F. Prix
 
-Pose dans cet ordre. Décris l’offre clairement. Ne dis pas ton prix.
+Chhal tqder tkhalles f chher 3la had la gestion ?  
+Moins de 200 DH / 200 à 500 DH / 500 à 1 000 DH / Plus de 1 000 DH / À discuter
 
-Men aya taman tgol : « rkhis bzzaf, kanchek f la qualité » ?  
-Men aya taman tgol : « hada taman mzyan » ?  
-Men aya taman tgol : « ghali, walakin nqder nkhelles » ?  
-Men aya taman tgol : « ghali bzzaf, ma nkhallesch » ?  
-Chhal maximum tqbel tkhelles f chher wla f commande ?  
-Katfaddel tkhelles : À la commande / Chaque semaine / Chaque mois / À crédit
+Katfaddel tkhalles : Chaque mois / Une seule fois / À discuter
 
-## H. Décision
+Chi besoin précis tzed ?
 
-Chno li ykhallik tbeddel fournisseur ?  
-Un prix plus bas de 5 % / 10 % / 15 % et plus / Une meilleure qualité / Un meilleur délai / Un paiement à crédit / Autre
+## G. Contact (facultatif)
 
-Chhal men waqt khassek bach tqarer ?  
-Immédiatement / Quelques jours / Une semaine ou plus
-
-## I. Contact (facultatif)
-
-Nqder n3awed ntasel bik ?  
-Nom du magasin, nom, téléphone.
-
----
-
-## Conseils
-
-- Vise **30 à 50 magasins**.
-- Jerreb l’awel 3 à 5 commerçants bach tchouf wach les questions mfhomin.
-- Ma tgolch taman dyalek qbel les questions de prix.
-- Kteb les remarques li kaykhrjo b wa7dhom.
+Nqder n3awed ntasel bik ? Nom du magasin, nom, téléphone.

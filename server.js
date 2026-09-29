@@ -131,21 +131,21 @@ function createdAtLabel() {
 function mailSummary(record) {
   const answers = record.answers;
   const shop = oneLine(answers.nom_magasin || answers.contact_nom || "Magasin");
-  const budget = oneLine(answers.budget);
+  const gestion = oneLine(answers.gestion_actuelle);
+  const echappe = oneLine(answers.echappe);
   const essayer = oneLine(answers.essayer);
-  const affaire = oneLine(answers.prix_affaire);
-  const max = oneLine(answers.prix_max);
+  const prix = oneLine(answers.prix_mois);
   return {
     shop,
-    subject: `[Lafiray Salmia 2] Réponse — ${shop}`,
+    subject: `[Gestion pièces auto] Réponse — ${shop}`,
     text: [
-      "Nouvelle réponse au questionnaire pièces auto, Lafiray Salmia 2.",
+      "Nouvelle réponse au questionnaire de gestion, pièces auto.",
       "",
       `Magasin : ${shop}`,
-      budget ? `Budget d'achat mensuel : ${budget}` : "",
+      gestion ? `Gestion actuelle : ${gestion}` : "",
+      echappe ? `Ce qui échappe : ${echappe}` : "",
       essayer ? `Prêt à essayer : ${essayer}` : "",
-      affaire ? `Bonne affaire : ${affaire} DH` : "",
-      max ? `Maximum accepté : ${max} DH` : "",
+      prix ? `Prix mensuel : ${prix}` : "",
       "",
       "Le PDF complet est en pièce jointe.",
       `Référence : ${record.id}`,
