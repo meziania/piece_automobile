@@ -184,6 +184,7 @@ const dict = {
   "Envoi impossible pour le moment.": "الإرسال غير ممكن حالياً.",
   "Trop de réponses. Réessayez plus tard.": "عدد كبير من الإجابات. أعيدوا المحاولة لاحقاً.",
   "Les réponses sont envoyées par email en PDF. Vous pouvez aussi le télécharger ici.": "أُرسلت الأجوبة بالبريد في ملف PDF. يمكنكم أيضاً تحميله هنا.",
+  "Aucun email n'a été envoyé. Ouvrez le questionnaire sur cet ordinateur, pas sur le site Vercel.": "ما تصيفط حتى إيميل. حل الاستبيان فهاد الحاسوب، ماشي فموقع Vercel.",
   "Les réponses sont enregistrées.": "تم حفظ الأجوبة.",
   "Rue ou repère": "الشارع أو المعلم",
   "Ancienneté": "الأقدمية",

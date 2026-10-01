@@ -141,7 +141,7 @@ let lastEmailed = false;
 function paintThanks() {
   document.querySelector("#thanksText").textContent = lastEmailed
     ? t("Les réponses sont envoyées par email en PDF. Vous pouvez aussi le télécharger ici.")
-    : t("Les réponses sont prêtes en PDF. Téléchargez-le ici.");
+    : t("Aucun email n'a été envoyé. Ouvrez le questionnaire sur cet ordinateur, pas sur le site Vercel.");
 }
 
 async function submit() {

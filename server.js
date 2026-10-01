@@ -7,6 +7,7 @@ const path = require("path");
 const express = require("express");
 const nodemailer = require("nodemailer");
 const { buildPdf } = require("./lib/pdf");
+const schema = require("./lib/schema");
 
 const ROOT = __dirname;
 const ON_VERCEL = Boolean(process.env.VERCEL);
@@ -131,25 +132,27 @@ function createdAtLabel() {
 function mailSummary(record) {
   const answers = record.answers;
   const shop = oneLine(answers.nom_magasin || answers.contact_nom || "Magasin");
-  const gestion = oneLine(answers.gestion_actuelle);
-  const echappe = oneLine(answers.echappe);
-  const essayer = oneLine(answers.essayer);
-  const prix = oneLine(answers.prix_mois);
+  const lines = [
+    "Nouvelle réponse au questionnaire de gestion, pièces auto.",
+    "",
+    `Magasin : ${shop}`,
+    "",
+  ];
+  for (const section of schema) {
+    const rows = [];
+    for (const field of section.fields) {
+      const value = answers[field.key];
+      if (value == null || value === "" || (Array.isArray(value) && value.length === 0)) continue;
+      rows.push(`${field.label} : ${Array.isArray(value) ? value.join(", ") : value}`);
+    }
+    if (!rows.length) continue;
+    lines.push(section.title, ...rows, "");
+  }
+  lines.push("Le PDF complet est en pièce jointe.", `Référence : ${record.id}`);
   return {
     shop,
     subject: `[Gestion pièces auto] Réponse — ${shop}`,
-    text: [
-      "Nouvelle réponse au questionnaire de gestion, pièces auto.",
-      "",
-      `Magasin : ${shop}`,
-      gestion ? `Gestion actuelle : ${gestion}` : "",
-      echappe ? `Ce qui échappe : ${echappe}` : "",
-      essayer ? `Prêt à essayer : ${essayer}` : "",
-      prix ? `Prix mensuel : ${prix}` : "",
-      "",
-      "Le PDF complet est en pièce jointe.",
-      `Référence : ${record.id}`,
-    ].filter(Boolean).join("\n"),
+    text: lines.join("\n"),
   };
 }
 
@@ -165,7 +168,7 @@ async function sendMail(record, pdf) {
     },
   });
 
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: process.env.MAIL_FROM || process.env.SMTP_USER,
     to: process.env.MAIL_TO,
     subject: summary.subject,
@@ -178,6 +181,7 @@ async function sendMail(record, pdf) {
       },
     ],
   });
+  console.log(`Email envoyé → ${process.env.MAIL_TO} (${info.messageId})`);
 }
 
 function pageShell(title, body) {
@@ -330,6 +334,8 @@ app.post("/api/reponse", async (req, res) => {
       } catch (error) {
         console.error("Email non envoyé:", error.message);
       }
+    } else {
+      console.log("Email non envoyé: SMTP_PASS manquant sur ce serveur");
     }
 
     const rows = readIndex();
